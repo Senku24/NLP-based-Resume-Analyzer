@@ -23,7 +23,7 @@ def extract_text_from_pdf(file) -> str:
 
 
 def extract_text_from_docx(file) -> str:
-    """Extract text from a DOCX file using python-docx."""
+
     text = ""
     try:
         # python-docx needs a file-like object or path
@@ -44,7 +44,7 @@ def extract_text_from_docx(file) -> str:
 
 
 def extract_text_from_txt(file) -> str:
-    """Extract text from a plain TXT file."""
+
     try:
         content = file.read()
         if isinstance(content, bytes):
@@ -55,15 +55,7 @@ def extract_text_from_txt(file) -> str:
 
 
 def extract_resume_text(uploaded_file) -> str:
-    """
-    Dispatch text extraction based on file extension.
-
-    Args:
-        uploaded_file: Streamlit UploadedFile object
-
-    Returns:
-        Extracted plain text string
-    """
+    
     filename = uploaded_file.name.lower()
 
     if filename.endswith(".pdf"):

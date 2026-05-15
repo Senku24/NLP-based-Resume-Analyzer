@@ -1,6 +1,7 @@
 # 🎯 AI Resume Analyzer & Job Match System
+# Nixon Paul [21MIC0159]
 
-An NLP-powered resume analysis prototype built with Python and Streamlit.  
+An NLP-powered resume analyzer and job matcher built with Python and Streamlit.  
 Upload a resume, paste a job description, and get instant skill matching, ATS scoring, and improvement suggestions.
 
 ---
@@ -133,7 +134,7 @@ Raw Resume Text
 | File Parsing | pdfplumber, python-docx |
 | Language | Python 3.9+ |
 
----
+----
 
 ## 📋 Requirements
 
@@ -141,6 +142,3 @@ Raw Resume Text
 - Internet connection for initial setup (model downloads)
 - ~500 MB disk space for NLP models
 
----
-
-*Built as an academic prototype MVP — NLP-based Resume Analyzer v1.0*

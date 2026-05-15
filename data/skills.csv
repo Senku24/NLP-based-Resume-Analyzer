@@ -1,0 +1,131 @@
+skill,category
+Python,Programming
+Java,Programming
+JavaScript,Programming
+TypeScript,Programming
+C++,Programming
+C#,Programming
+Go,Programming
+R,Programming
+Kotlin,Programming
+Swift,Programming
+PHP,Programming
+Ruby,Programming
+Scala,Programming
+Rust,Programming
+MATLAB,Programming
+Bash,Programming
+Shell Scripting,Programming
+React,Web Development
+Angular,Web Development
+Vue,Web Development
+Node.js,Web Development
+Django,Web Development
+Flask,Web Development
+FastAPI,Web Development
+Spring Boot,Web Development
+Express.js,Web Development
+Next.js,Web Development
+HTML,Web Development
+CSS,Web Development
+Bootstrap,Web Development
+REST API,Web Development
+GraphQL,Web Development
+jQuery,Web Development
+Redux,Web Development
+Webpack,Web Development
+AWS,Cloud & DevOps
+GCP,Cloud & DevOps
+Azure,Cloud & DevOps
+Docker,Cloud & DevOps
+Kubernetes,Cloud & DevOps
+CI/CD,Cloud & DevOps
+Jenkins,Cloud & DevOps
+Terraform,Cloud & DevOps
+Ansible,Cloud & DevOps
+Linux,Cloud & DevOps
+Nginx,Cloud & DevOps
+GitHub Actions,Cloud & DevOps
+CircleCI,Cloud & DevOps
+Helm,Cloud & DevOps
+SQL,Database
+PostgreSQL,Database
+MySQL,Database
+MongoDB,Database
+Redis,Database
+Elasticsearch,Database
+SQLite,Database
+Oracle,Database
+DynamoDB,Database
+Cassandra,Database
+Firebase,Database
+NoSQL,Database
+Machine Learning,AI/ML
+Deep Learning,AI/ML
+TensorFlow,AI/ML
+PyTorch,AI/ML
+Keras,AI/ML
+scikit-learn,AI/ML
+NLP,AI/ML
+Computer Vision,AI/ML
+Data Science,AI/ML
+Pandas,AI/ML
+NumPy,AI/ML
+Matplotlib,AI/ML
+Seaborn,AI/ML
+Jupyter,AI/ML
+XGBoost,AI/ML
+LightGBM,AI/ML
+Hugging Face,AI/ML
+OpenCV,AI/ML
+BERT,AI/ML
+Neural Networks,AI/ML
+Reinforcement Learning,AI/ML
+Feature Engineering,AI/ML
+Data Preprocessing,AI/ML
+Git,Tools
+GitHub,Tools
+GitLab,Tools
+Jira,Tools
+Confluence,Tools
+Postman,Tools
+VS Code,Tools
+IntelliJ,Tools
+Eclipse,Tools
+Slack,Tools
+Tableau,Tools
+Power BI,Tools
+Figma,Tools
+Selenium,Tools
+JUnit,Tools
+PyTest,Tools
+Agile,Methodology
+Scrum,Methodology
+Kanban,Methodology
+DevOps,Methodology
+TDD,Methodology
+BDD,Methodology
+Microservices,Architecture
+API Design,Architecture
+System Design,Architecture
+Object-Oriented Programming,Architecture
+Functional Programming,Architecture
+Data Structures,Computer Science
+Algorithms,Computer Science
+Operating Systems,Computer Science
+Computer Networks,Computer Science
+Cybersecurity,Computer Science
+Blockchain,Emerging Tech
+IoT,Emerging Tech
+AR/VR,Emerging Tech
+Quantum Computing,Emerging Tech
+Leadership,Soft Skills
+Communication,Soft Skills
+Problem Solving,Soft Skills
+Teamwork,Soft Skills
+Time Management,Soft Skills
+Critical Thinking,Soft Skills
+Adaptability,Soft Skills
+Project Management,Soft Skills
+Attention to Detail,Soft Skills
+Creativity,Soft Skills

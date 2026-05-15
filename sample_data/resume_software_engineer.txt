@@ -1,0 +1,43 @@
+John Doe
+Email: john.doe@email.com | Phone: +1-555-0101
+GitHub: github.com/johndoe | LinkedIn: linkedin.com/in/johndoe
+Location: New York, NY
+
+OBJECTIVE
+Passionate software engineer with 2 years of experience building scalable web applications
+and data-driven solutions. Seeking a backend engineering role to apply my Python and cloud skills.
+
+EDUCATION
+Bachelor of Science in Computer Science
+State University of New York | GPA: 3.7 | 2020 - 2024
+
+SKILLS
+Programming: Python, JavaScript, Java, SQL, Bash
+Frameworks: Django, Flask, React, Node.js
+Databases: PostgreSQL, MySQL, MongoDB, Redis
+Cloud & DevOps: AWS (EC2, S3, Lambda), Docker, Git, GitHub
+Tools: Jira, Postman, Linux, VS Code
+
+EXPERIENCE
+Software Engineering Intern | TechCorp Inc. | June 2023 - Aug 2023
+- Developed REST API endpoints using Python and Django, reducing response time by 25%
+- Containerized 3 microservices using Docker, improving deployment consistency
+- Wrote SQL queries and database schemas for PostgreSQL
+- Collaborated with a team of 5 engineers using Agile/Scrum methodology
+
+Junior Developer | FreelanceWork | Jan 2023 - May 2023
+- Built a data dashboard using React and Flask serving 500+ daily users
+- Integrated AWS S3 for file storage; reduced storage costs by 20%
+
+PROJECTS
+E-Commerce Platform (Django + React + PostgreSQL)
+- Full-stack web application with payment integration and admin panel
+- Deployed on AWS EC2 with Docker; handles 1000+ requests/day
+
+Student Grade Predictor (Python + scikit-learn)
+- Machine Learning model using logistic regression achieving 89% accuracy
+- Data preprocessing with Pandas and NumPy; visualized results with Matplotlib
+
+CERTIFICATIONS
+- AWS Certified Cloud Practitioner (2023)
+- Python for Data Science - Coursera (2022)

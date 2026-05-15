@@ -1,0 +1,43 @@
+Priya Sharma
+priya.sharma@email.com | +1-555-0202 | github.com/priyasharma
+
+SUMMARY
+Data Science enthusiast with strong foundation in machine learning, statistical analysis, and
+Python programming. Experience building predictive models and data pipelines for real-world datasets.
+
+EDUCATION
+M.Sc. Data Science — Boston University | 2022-2024 | GPA: 3.8
+B.Sc. Mathematics — University of Mumbai | 2018-2022
+
+TECHNICAL SKILLS
+Languages: Python, R, SQL
+ML/AI: scikit-learn, TensorFlow, Keras, PyTorch, XGBoost, NLP
+Data Tools: Pandas, NumPy, Matplotlib, Seaborn, Jupyter
+Databases: MySQL, MongoDB
+Cloud: GCP (BigQuery, AI Platform), AWS S3
+Other: Git, Tableau, Power BI
+
+EXPERIENCE
+Data Science Intern | DataMinds Analytics | May 2023 - Aug 2023
+- Built a customer churn prediction model using XGBoost achieving 91% AUC
+- Performed feature engineering and data preprocessing on 500K+ row datasets
+- Created Power BI dashboards for business stakeholders
+- Used NLP techniques (TF-IDF, BERT) for sentiment analysis on customer reviews
+
+Research Assistant | BU Data Lab | Sep 2022 - Apr 2023
+- Analyzed healthcare datasets using Python and R; published findings in lab report
+- Implemented deep learning model using TensorFlow for image classification (87% accuracy)
+
+PROJECTS
+Sentiment Analysis Engine (Python + NLP + Flask)
+- Built end-to-end sentiment classifier using BERT and Flask REST API
+- Trained on 50K Twitter reviews; deployed as a web service on GCP
+
+Sales Forecasting System (Python + scikit-learn + Tableau)
+- Time-series forecasting model using ARIMA and Random Forest
+- Reduced forecast error by 18%; integrated with Tableau dashboard
+
+CERTIFICATIONS
+- Google Professional Data Engineer (2024)
+- Deep Learning Specialization — Coursera/deeplearning.ai (2023)
+- Tableau Desktop Specialist (2023)

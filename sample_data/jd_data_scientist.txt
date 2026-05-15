@@ -1,0 +1,39 @@
+Job Title: Data Scientist
+Company: InsightAI Labs
+Location: Boston, MA (Remote OK)
+
+ABOUT THE ROLE
+InsightAI Labs is hiring a Data Scientist to develop ML models, analyze large datasets,
+and deliver actionable insights to product and business teams.
+
+RESPONSIBILITIES
+- Build, train, and deploy machine learning models (classification, regression, clustering)
+- Perform exploratory data analysis (EDA) using Python and R
+- Apply NLP techniques to extract insights from unstructured text data
+- Engineer features from raw datasets; manage data preprocessing pipelines
+- Evaluate model performance using metrics (AUC, F1, RMSE) and iterate
+- Create visualizations and dashboards to communicate findings (Tableau, Power BI)
+- Collaborate with data engineers on ETL pipelines and BigQuery
+- Document experiments using Jupyter Notebooks
+
+REQUIRED QUALIFICATIONS
+- Master's degree in Data Science, Statistics, Computer Science, or related field
+- Strong programming skills in Python and R
+- Experience with ML libraries: scikit-learn, TensorFlow, PyTorch, XGBoost
+- Solid understanding of NLP concepts (tokenization, TF-IDF, word embeddings, BERT)
+- Proficiency in SQL for data extraction and analysis
+- Experience with data visualization tools (Matplotlib, Seaborn, Tableau)
+- Familiarity with cloud platforms: GCP (BigQuery, AI Platform) or AWS
+- Strong statistical knowledge (probability, regression, hypothesis testing)
+
+NICE TO HAVE
+- Experience with deep learning and neural networks
+- Familiarity with MLOps practices
+- Knowledge of Spark for big data processing
+- Published research or Kaggle competition experience
+
+BENEFITS
+- Flexible remote work
+- Paid conference attendance
+- Research budget
+- Comprehensive health coverage

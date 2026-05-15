@@ -26,7 +26,22 @@ st.set_page_config(
 # ─── Custom CSS ───────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ── Keyframe Animations ─────────────────────────────── */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulseBorder {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(88,166,255,0.0); }
+  50%       { box-shadow: 0 0 0 6px rgba(88,166,255,0.18); }
+}
+@keyframes badgePop {
+  0%   { transform: scale(0.85); opacity: 0; }
+  70%  { transform: scale(1.05); }
+  100% { transform: scale(1);    opacity: 1; }
+}
 
 /* Global */
 html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
@@ -34,82 +49,191 @@ html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 
 /* Sidebar */
 [data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
-    border-right: 1px solid #30363d;
+    background: linear-gradient(180deg, #13192a 0%, #0d1117 100%);
+    border-right: 1px solid #21262d;
 }
+
+/* ── Analyze Button ──────────────────────────────────── */
+[data-testid="stSidebar"] [data-testid="stBaseButton-primary"] {
+    background: linear-gradient(135deg, #1f6feb 0%, #388bfd 100%) !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.04em !important;
+    padding: 12px 0 !important;
+    transition: filter 0.2s, transform 0.15s !important;
+    animation: pulseBorder 2.8s ease-in-out infinite;
+}
+[data-testid="stSidebar"] [data-testid="stBaseButton-primary"]:hover {
+    filter: brightness(1.18) !important;
+    transform: translateY(-2px) !important;
+}
+[data-testid="stSidebar"] [data-testid="stBaseButton-primary"]:active {
+    transform: translateY(0px) scale(0.97) !important;
+    filter: brightness(0.92) !important;
+}
+
+/* ── Tab Navigation ──────────────────────────────────── */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 6px;
+    background: #161b22;
+    border-radius: 12px;
+    padding: 6px;
+    border: 1px solid #21262d;
+}
+.stTabs [data-baseweb="tab"] {
+    color: #8b949e;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    border-radius: 8px;
+    padding: 8px 20px;
+    transition: color 0.2s, background 0.2s;
+    border: none;
+}
+.stTabs [data-baseweb="tab"]:hover {
+    color: #c9d1d9;
+    background: #21262d;
+}
+.stTabs [aria-selected="true"] {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #1f6feb 0%, #a371f7 100%) !important;
+    box-shadow: 0 2px 12px rgba(88,166,255,0.35) !important;
+}
+.stTabs [data-baseweb="tab-highlight"] { display: none !important; }
+.stTabs [data-baseweb="tab-border"]    { display: none !important; }
 
 /* Cards */
 .metric-card {
-    background: linear-gradient(135deg, #161b22 0%, #1c2333 100%);
+    background: linear-gradient(145deg, #161b22 0%, #1c2333 100%);
     border: 1px solid #30363d;
     border-radius: 16px;
-    padding: 24px;
+    padding: 22px 24px;
     text-align: center;
     margin: 8px 0;
+    animation: fadeSlideUp 0.45s ease both;
+    transition: border-color 0.25s, box-shadow 0.25s;
 }
-.metric-card h1 { font-size: 3rem; font-weight: 700; margin: 0; }
-.metric-card p  { color: #8b949e; font-size: 0.85rem; margin: 4px 0 0; }
+.metric-card:hover {
+    border-color: #388bfd44;
+    box-shadow: 0 4px 20px rgba(56,139,253,0.12);
+}
+.metric-card h1 { font-size: 2.8rem; font-weight: 800; margin: 0; letter-spacing: -0.02em; }
+.metric-card p  { color: #8b949e; font-size: 0.82rem; margin: 6px 0 0; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ATS Alert Strip */
+.alert-strip {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 10px 18px;
+    margin: 6px 0 16px;
+    animation: fadeSlideUp 0.4s ease both;
+}
+.alert-strip .alert-emoji { font-size: 1.25rem; flex-shrink: 0; }
+.alert-strip .alert-band  { font-weight: 700; font-size: 0.95rem; flex-shrink: 0; }
+.alert-strip .alert-text  { color: #8b949e; font-size: 0.85rem; line-height: 1.4; }
 
 /* Skill badges */
 .badge {
     display: inline-block;
-    padding: 4px 12px;
+    padding: 5px 13px;
     border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    font-size: 0.82rem;
+    font-weight: 600;
     margin: 3px;
+    cursor: default;
+    transition: transform 0.18s, box-shadow 0.18s;
+    animation: badgePop 0.35s ease both;
 }
-.badge-matched { background: #1a3a2a; color: #3fb950; border: 1px solid #3fb950; }
-.badge-missing  { background: #3a1a1a; color: #f85149; border: 1px solid #f85149; }
-.badge-extra    { background: #1a2a3a; color: #58a6ff; border: 1px solid #58a6ff; }
+.badge:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.badge-matched { background: #122d1e; color: #3fb950; border: 1px solid #2ea043; }
+.badge-missing  { background: #2d1216; color: #f85149; border: 1px solid #da3633; }
+.badge-extra    { background: #0d1f33; color: #58a6ff; border: 1px solid #1f6feb; }
 
 /* Suggestion cards */
 .tip-card {
-    background: #161b22;
+    background: linear-gradient(135deg, #161b22, #1a2030);
     border-left: 4px solid #58a6ff;
-    border-radius: 8px;
-    padding: 12px 16px;
-    margin: 8px 0;
-    font-size: 0.9rem;
+    border-radius: 0 10px 10px 0;
+    padding: 11px 16px;
+    margin: 7px 0;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    animation: fadeSlideUp 0.4s ease both;
+    transition: border-left-width 0.18s;
 }
+.tip-card:hover { border-left-width: 6px; }
 .tip-card.skill { border-left-color: #f85149; }
 .tip-card.general { border-left-color: #3fb950; }
 
 /* Section headings */
 .section-title {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 0.78rem;
+    font-weight: 700;
     color: #58a6ff;
-    margin: 20px 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 22px 0 10px;
     padding-bottom: 6px;
     border-bottom: 1px solid #21262d;
 }
 
-/* Tab styling override */
-.stTabs [data-baseweb="tab"] {
-    color: #8b949e;
-    font-weight: 500;
-}
-.stTabs [aria-selected="true"] {
-    color: #58a6ff !important;
-}
-
 /* Header gradient text */
 .hero-title {
-    font-size: 2.4rem;
-    font-weight: 700;
-    background: linear-gradient(90deg, #58a6ff, #3fb950, #a371f7);
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #58a6ff 0%, #3fb950 50%, #a371f7 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin: 0;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
 }
 .hero-sub {
     color: #8b949e;
-    font-size: 1rem;
-    margin-top: 4px;
+    font-size: 0.95rem;
+    margin-top: 6px;
+    letter-spacing: 0.01em;
 }
 hr.divider { border-color: #21262d; margin: 16px 0; }
+
+/* Spinner override */
+[data-testid="stSpinner"] > div {
+    border-color: #388bfd transparent transparent transparent !important;
+}
+
+/* File analyzed banner */
+.file-banner {
+    display:flex; align-items:center; gap:10px;
+    background:linear-gradient(90deg,#0d1f33,#13192a);
+    border:1px solid #1f6feb44; border-radius:10px;
+    padding:10px 18px; margin-bottom:20px;
+    animation: fadeSlideUp 0.3s ease both;
+}
+.file-banner .fb-icon { font-size:1.3rem; }
+.file-banner .fb-name { font-weight:700; font-size:1rem; color:#e6edf3; }
+.file-banner .fb-label { font-size:0.78rem; color:#58a6ff; text-transform:uppercase; letter-spacing:0.08em; margin-left:auto; }
+
+/* Stat cards */
+.stat-card {
+    background:linear-gradient(145deg,#161b22,#1c2333);
+    border:1px solid #30363d; border-radius:14px;
+    padding:20px 16px 16px; text-align:center;
+    animation: fadeSlideUp 0.5s ease both;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    position:relative; overflow:hidden;
+}
+.stat-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; border-radius:14px 14px 0 0; }
+.stat-card:hover { transform:translateY(-4px); box-shadow:0 8px 28px rgba(0,0,0,0.4); }
+.stat-card .sc-num { font-size:2.8rem; font-weight:800; letter-spacing:-0.02em; line-height:1; }
+.stat-card .sc-label { font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.09em; color:#8b949e; margin-top:8px; }
+.stat-card .sc-sub { font-size:0.72rem; color:#484f58; margin-top:3px; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -128,32 +252,31 @@ def make_gauge(value: int, title: str, color: str) -> go.Figure:
     fig = go.Figure(go.Indicator(
         mode="gauge+number",
         value=value,
-        title={"text": title, "font": {"color": "#e6edf3", "size": 14}},
-        number={"suffix": "%", "font": {"color": color, "size": 36}},
+        title={"text": title, "font": {"color": "#8b949e", "size": 13, "family": "Inter"}},
+        number={"suffix": "%", "font": {"color": color, "size": 42, "family": "Inter"}},
         gauge={
-            "axis": {"range": [0, 100], "tickcolor": "#8b949e",
-                     "tickfont": {"color": "#8b949e"}},
-            "bar": {"color": color, "thickness": 0.25},
-            "bgcolor": "#21262d",
-            "bordercolor": "#30363d",
-            "steps": [
-                {"range": [0, 40],  "color": "#1a1a2a"},
-                {"range": [40, 70], "color": "#1a2a1a"},
-                {"range": [70, 100],"color": "#1a3a2a"},
-            ],
-            "threshold": {
-                "line": {"color": color, "width": 3},
-                "thickness": 0.75,
-                "value": value,
+            "axis": {
+                "range": [0, 100],
+                "tickcolor": "#30363d",
+                "tickfont": {"color": "#484f58", "size": 10},
+                "tickwidth": 1,
+                "nticks": 6,
             },
+            # Thicker bar so score arc pops — no threshold line (removes T-artifact)
+            "bar": {"color": color, "thickness": 0.38},
+            "bgcolor": "#0a0d12",      # Very dark track so arc pops
+            "borderwidth": 0,
+            "steps": [
+                {"range": [0,   100], "color": "#0e1118"},  # Single dark track
+            ],
         },
     ))
     fig.update_layout(
         paper_bgcolor="#0d1117",
         plot_bgcolor="#0d1117",
-        font={"color": "#e6edf3"},
-        height=260,
-        margin=dict(t=40, b=10, l=20, r=20),
+        font={"color": "#e6edf3", "family": "Inter"},
+        height=270,
+        margin=dict(t=30, b=0, l=30, r=30),
     )
     return fig
 
@@ -233,7 +356,7 @@ if analyze_btn or ("results" in st.session_state):
             st.error("⚠️ Please paste a job description.")
             st.stop()
 
-        with st.spinner("⚙️ Running NLP pipeline…"):
+        with st.spinner("⚙️  Parsing resume · extracting skills · computing similarity…"):
             try:
                 # 1. Parse resume
                 resume_text = extract_resume_text(uploaded_file)
@@ -298,13 +421,26 @@ if analyze_btn or ("results" in st.session_state):
     suggestions = R["suggestions"]
 
     # ── Tabs ─────────────────────────────────────────────────────────────────
-    tab1, tab2, tab3, tab4 = st.tabs(["📊 Overview", "🛠️ Skills Analysis", "🔬 NLP Details", "💡 Suggestions"])
+    tab1, tab2, tab3, tab4 = st.tabs([
+        "  📊  Overview  ",
+        "  🛠️  Skills Analysis  ",
+        "  🔬  NLP Details  ",
+        "  💡  Suggestions  ",
+    ])
 
     # ══════════════════════════════════════════════════════════════════════════
     # TAB 1 — OVERVIEW
     # ══════════════════════════════════════════════════════════════════════════
     with tab1:
-        st.markdown(f"**Analyzed:** `{R['filename']}`")
+        # File analyzed banner
+        st.markdown(
+            f'<div class="file-banner">'
+            f'<span class="fb-icon">📄</span>'
+            f'<span class="fb-name">{R["filename"]}</span>'
+            f'<span class="fb-label">✔ Analyzed</span>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
 
         # Score gauges
         col_g1, col_g2 = st.columns(2)
@@ -315,28 +451,42 @@ if analyze_btn or ("results" in st.session_state):
             fig_ats = make_gauge(R["ats_score"], "ATS Compatibility Score", ats_band["color"])
             st.plotly_chart(fig_ats, use_container_width=True)
 
-        # ATS band summary
+        # ATS alert strip — slim, not a big block
         st.markdown(
-            f'<div class="metric-card" style="text-align:left;">'
-            f'<span style="font-size:1.8rem;">{ats_band["emoji"]}</span>&nbsp;'
-            f'<strong style="color:{ats_band["color"]};font-size:1.1rem;">{ats_band["band"]}</strong>'
-            f'<p style="margin-top:8px;">{ats_band["advice"]}</p>'
+            f'<div class="alert-strip" style="border-left:4px solid {ats_band["color"]}">'
+            f'<span class="alert-emoji">{ats_band["emoji"]}</span>'
+            f'<span class="alert-band" style="color:{ats_band["color"]}">{ats_band["band"]}</span>'
+            f'<span class="alert-text">{ats_band["advice"]}</span>'
             f'</div>',
             unsafe_allow_html=True,
         )
 
         st.markdown('<hr class="divider">', unsafe_allow_html=True)
+        st.markdown(
+            '<p class="section-title">📈 At a Glance</p>',
+            unsafe_allow_html=True,
+        )
 
         # Quick stats row
         c1, c2, c3, c4 = st.columns(4)
-        with c1:
-            st.markdown(f'<div class="metric-card"><h1 style="color:#58a6ff;">{R["match_pct"]}%</h1><p>Match Score</p></div>', unsafe_allow_html=True)
-        with c2:
-            st.markdown(f'<div class="metric-card"><h1 style="color:{ats_band["color"]};">{R["ats_score"]}</h1><p>ATS Score /100</p></div>', unsafe_allow_html=True)
-        with c3:
-            st.markdown(f'<div class="metric-card"><h1 style="color:#3fb950;">{len(skill_gap["matched"])}</h1><p>Matched Skills</p></div>', unsafe_allow_html=True)
-        with c4:
-            st.markdown(f'<div class="metric-card"><h1 style="color:#f85149;">{len(skill_gap["missing"])}</h1><p>Missing Skills</p></div>', unsafe_allow_html=True)
+        stats = [
+            (c1, R["match_pct"], "%", "Match Score", "TF-IDF similarity", "#58a6ff"),
+            (c2, R["ats_score"], "/100", "ATS Score", "Weighted compatibility", ats_band["color"]),
+            (c3, len(skill_gap["matched"]), "", "Skills Matched", "Found in both resume & JD", "#3fb950"),
+            (c4, len(skill_gap["missing"]), "", "Skills Missing", "Present in JD, absent in resume", "#f85149"),
+        ]
+        for col, num, suffix, label, sub, color in stats:
+            with col:
+                st.markdown(
+                    f'<div class="stat-card" style="border-color:{color}33">'
+                    f'<div style="position:absolute;top:0;left:0;right:0;height:3px;'
+                    f'background:{color};border-radius:14px 14px 0 0;"></div>'
+                    f'<div class="sc-num" style="color:{color}">{num}{suffix}</div>'
+                    f'<div class="sc-label">{label}</div>'
+                    f'<div class="sc-sub">{sub}</div>'
+                    f'</div>',
+                    unsafe_allow_html=True,
+                )
 
     # ══════════════════════════════════════════════════════════════════════════
     # TAB 2 — SKILLS ANALYSIS
@@ -469,11 +619,11 @@ if analyze_btn or ("results" in st.session_state):
     with tab4:
         priority_color = {"High": "#f85149", "Medium": "#ffe66d", "Low": "#3fb950"}
         p = suggestions["priority"]
+        pc = priority_color.get(p, "#58a6ff")
         st.markdown(
-            f'<div class="metric-card" style="text-align:left;">'
-            f'<span style="color:{priority_color.get(p,"#58a6ff")};font-weight:700;">'
-            f'Priority: {p}</span>'
-            f'<p style="margin-top:8px;">{suggestions["score_message"]}</p>'
+            f'<div class="alert-strip" style="border-left:4px solid {pc}">'
+            f'<span class="alert-band" style="color:{pc}">⚡ {p} Priority</span>'
+            f'<span class="alert-text">{suggestions["score_message"]}</span>'
             f'</div>',
             unsafe_allow_html=True,
         )
